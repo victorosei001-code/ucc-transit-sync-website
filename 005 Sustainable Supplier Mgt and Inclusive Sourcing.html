@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#102b24">
+<title>UCC Transit-Sync | Campus Mobility</title>
+<style>
+:root{--green:#176b4b;--green2:#e8f5ee;--ink:#17251f;--muted:#66756e;--line:#e3eae6;--bg:#f5f8f6;--white:#fff;--amber:#fff3d8;--red:#fde8e7;--shadow:0 12px 35px rgba(22,54,39,.07)}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 Inter,system-ui,-apple-system,Segoe UI,sans-serif}button,input,select{font:inherit}button{cursor:pointer}.shell{max-width:1200px;margin:auto;padding:0 22px}.top{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:5}.nav{height:72px;display:flex;align-items:center;justify-content:space-between;gap:16px}.brand{display:flex;align-items:center;gap:11px;font-weight:800;letter-spacing:-.3px}.logo{width:39px;height:39px;border-radius:12px;background:var(--green);color:white;display:grid;place-items:center;font-weight:900}.brand small{display:block;color:var(--muted);font-size:11px;font-weight:600;letter-spacing:.4px}.navlinks{display:flex;gap:8px}.navlinks a{color:var(--muted);text-decoration:none;padding:9px 12px;border-radius:9px;font-weight:650}.navlinks a:hover{background:var(--green2);color:var(--green)}.btn{border:0;border-radius:10px;padding:10px 15px;font-weight:700}.primary{background:var(--green);color:white}.soft{background:var(--green2);color:var(--green)}.outline{background:#fff;border:1px solid var(--line);color:var(--ink)}.hero{padding:42px 0 26px;display:grid;grid-template-columns:1.4fr .8fr;gap:22px;align-items:stretch}.eyebrow{color:var(--green);font-size:12px;font-weight:800;letter-spacing:1.2px;text-transform:uppercase}.hero h1{font-size:clamp(30px,4vw,48px);line-height:1.08;letter-spacing:-1.8px;margin:10px 0 12px}.hero p{color:var(--muted);max-width:650px;margin:0 0 20px}.hero-card,.card,.stat{background:var(--white);border:1px solid var(--line);border-radius:17px;box-shadow:var(--shadow)}.hero-card{padding:22px;display:flex;flex-direction:column;justify-content:space-between;background:linear-gradient(145deg,#123d2e,#1a6b4b);color:white}.hero-card p{color:#d5e8de}.pill{display:inline-flex;align-items:center;gap:7px;border-radius:99px;padding:6px 10px;font-size:11px;font-weight:800;background:#fff2d7;color:#805510;width:max-content}.dot{width:7px;height:7px;background:#e2a52d;border-radius:50%}.hero-card .big{font-size:28px;font-weight:800;letter-spacing:-1px}.hero-card .sub{font-size:13px;color:#d5e8de}.actions{display:flex;gap:10px;flex-wrap:wrap}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:13px;margin:0 0 24px}.stat{padding:16px}.stat span{display:block;color:var(--muted);font-size:12px;font-weight:650}.stat strong{display:block;font-size:25px;margin-top:4px;letter-spacing:-.7px}.layout{display:grid;grid-template-columns:1.35fr .85fr;gap:18px;padding-bottom:42px}.card{padding:20px;margin-bottom:18px}.cardhead{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:15px}.card h2{font-size:17px;margin:0;letter-spacing:-.3px}.muted{color:var(--muted)}.tiny{font-size:12px}.map{height:275px;border-radius:13px;position:relative;overflow:hidden;background-color:#e8f0e9;background-image:linear-gradient(30deg,transparent 47%,#d0dfd3 48%,#d0dfd3 50%,transparent 51%),linear-gradient(120deg,transparent 47%,#d0dfd3 48%,#d0dfd3 50%,transparent 51%);background-size:90px 90px;border:1px solid #d9e5dc}.road{position:absolute;background:#fff;border:1px solid #d8e2da;height:18px;border-radius:20px;transform:rotate(-18deg);width:120%;left:-10%;top:48%}.road.two{transform:rotate(35deg);top:28%;left:-5%}.route{position:absolute;left:13%;top:57%;width:72%;height:4px;background:var(--green);transform:rotate(-18deg);border-radius:5px}.pin{position:absolute;background:var(--green);color:white;padding:7px 10px;border-radius:9px;font-size:11px;font-weight:800;box-shadow:0 5px 15px #234b3333}.p1{left:12%;top:62%}.p2{left:43%;top:37%}.p3{right:8%;top:22%}.maplabel{position:absolute;left:14px;top:13px;background:#ffffffdc;padding:6px 9px;border-radius:8px;font-size:10px;font-weight:800;color:#64746b}.stops{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:13px}.stop{border:1px solid var(--line);border-radius:12px;padding:12px}.stop strong{display:block;font-size:13px}.status{display:inline-flex;gap:6px;align-items:center;font-size:11px;font-weight:800;margin-top:5px}.status i{width:7px;height:7px;border-radius:50%;display:inline-block}.green{color:#18764f}.green i{background:#28a66d}.yellow{color:#9a6a08}.yellow i{background:#e3ad36}.red{color:#b33d38}.red i{background:#d65a55}.bus{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:13px 0;border-bottom:1px solid var(--line)}.bus:last-child{border:0}.busname{font-weight:750}.busmeta{font-size:12px;color:var(--muted)}.seat{font-size:11px;font-weight:800;border-radius:8px;padding:6px 9px;white-space:nowrap}.seat.full{background:var(--red);color:#b33d38}.seat.available{background:var(--green2);color:var(--green)}.seat.some{background:var(--amber);color:#8a650d}.notice{background:#f7faf8;border:1px solid var(--line);padding:12px;border-radius:11px;margin-top:10px;font-size:13px}.featurelist{display:grid;gap:10px}.feature{display:flex;gap:11px;align-items:flex-start}.ico{width:34px;height:34px;border-radius:10px;background:var(--green2);color:var(--green);display:grid;place-items:center;flex:none;font-weight:900}.feature strong{display:block;font-size:13px}.feature span{display:block;font-size:12px;color:var(--muted)}.tabs{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:14px}.tab{border:1px solid var(--line);background:#fff;padding:8px 11px;border-radius:9px;font-weight:700;color:var(--muted);font-size:12px}.tab.active{background:var(--green);color:#fff;border-color:var(--green)}.panel{display:none}.panel.active{display:block}.field{display:grid;gap:5px;margin:10px 0}.field label{font-size:12px;font-weight:750;color:var(--muted)}.field input,.field select{width:100%;padding:11px;border:1px solid var(--line);border-radius:9px;background:#fff;color:var(--ink)}.row{display:grid;grid-template-columns:1fr 1fr;gap:10px}.footer{border-top:1px solid var(--line);padding:22px 0 35px;color:var(--muted);font-size:12px}.footer strong{color:var(--ink)}.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:#17251f;color:#fff;padding:11px 16px;border-radius:10px;display:none;z-index:10;box-shadow:var(--shadow)}@media(max-width:800px){.navlinks{display:none}.hero,.layout{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,1fr)}.hero{padding-top:28px}.stops{grid-template-columns:1fr}.map{height:235px}}@media(max-width:420px){.shell{padding:0 14px}.card{padding:15px}.stat{padding:12px}.stat strong{font-size:22px}.hero-card{min-height:170px}.row{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header class="top"><div class="shell nav">
+ <div class="brand"><div class="logo">U</div><div>UCC TRANSIT-SYNC<small>UNIVERSITY OF CAPE COAST</small></div></div>
+ <nav class="navlinks"><a href="#overview">Overview</a><a href="#shuttles">Shuttles</a><a href="#accounts">Accounts</a></nav>
+ <button class="btn primary" onclick="document.querySelector('#accounts').scrollIntoView({behavior:'smooth'})">Get started</button>
+</div></header>
+<main class="shell">
+<section class="hero" id="overview">
+ <div><div class="eyebrow">Campus mobility, made simpler</div><h1>Your campus.<br> Your shuttle. Your time.</h1>
+ <p>Check shuttle information, seat availability and stop activity before heading across the University of Cape Coast campus.</p>
+ <div class="actions"><button class="btn primary" onclick="document.querySelector('#shuttles').scrollIntoView({behavior:'smooth'})">Find a shuttle →</button><button class="btn outline" onclick="document.querySelector('#accounts').scrollIntoView({behavior:'smooth'})">Explore dashboards</button></div></div>
+ <aside class="hero-card"><span class="pill"><i class="dot"></i> DEMONSTRATION MODE</span><div><div class="big">Move around campus with confidence.</div><p class="sub">Sample shuttle records are shown for demonstration. Official routes and live vehicle data require UCC Transport Office verification.</p></div><div class="sub">UCC · Old Site ↔ New Site</div></aside>
+</section>
+<section class="stats">
+ <div class="stat"><span>Sample shuttles</span><strong>06</strong><span>Illustrative fleet</span></div>
+ <div class="stat"><span>Sample stops</span><strong>03</strong><span>Demo locations</span></div>
+ <div class="stat"><span>Next shuttle</span><strong>02 min</strong><span>Simulated estimate</span></div>
+ <div class="stat"><span>Service status</span><strong style="color:var(--green)">Demo</strong><span>Not live tracking</span></div>
+</section>
+<section class="layout">
+ <div>
+  <article class="card" id="shuttles"><div class="cardhead"><h2>Shuttle activity</h2><span class="pill">DEMO MAP</span></div>
+   <div class="map"><span class="maplabel">ILLUSTRATIVE CAMPUS ROUTE · NOT GPS</span><div class="road"></div><div class="road two"></div><div class="route"></div><span class="pin p1">Sam Jonah Library</span><span class="pin p2">Casford Gate</span><span class="pin p3">Science Stop</span></div>
+   <div class="stops">
+    <div class="stop"><strong>Sam Jonah Library</strong><span class="status red"><i></i> Very crowded</span></div>
+    <div class="stop"><strong>Casford Gate</strong><span class="status yellow"><i></i> Moderately busy</span></div>
+    <div class="stop"><strong>Science Stop</strong><span class="status green"><i></i> Less busy</span></div>
+   </div>
+  </article>
+  <article class="card"><div class="cardhead"><h2>Next bus & seat checker</h2><span class="tiny muted">Sample arrivals</span></div>
+   <div class="bus"><div><div class="busname">Shuttle A · BUS 1</div><div class="busmeta">Sam Jonah Library · 2 min</div></div><span class="seat full">Full</span></div>
+   <div class="bus"><div><div class="busname">Shuttle B · BUS 2</div><div class="busmeta">Sam Jonah Library · 5 min</div></div><span class="seat available">Has seats</span></div>
+   <div class="bus"><div><div class="busname">Express shuttle</div><div class="busmeta">Science Stop · 7 min</div></div><span class="seat some">Seats available</span></div>
+   <div class="notice">These arrival times and seat statuses are sample data, not live shuttle information.</div>
+  </article>
+  <article class="card"><div class="cardhead"><h2>Class reminders & service updates</h2><span class="tiny muted">Example alerts</span></div>
+   <div class="featurelist"><div class="feature"><div class="ico">↗</div><div><strong>Auditorium 900</strong><span>Lecture starts in 20 minutes · Example reminder</span></div></div><div class="feature"><div class="ico">!</div><div><strong>Campus service notice</strong><span>Updates from the transport office will appear here when connected.</span></div></div></div>
+  </article>
+ </div>
+ <div>
+  <article class="card"><div class="cardhead"><h2>One platform, three dashboards</h2></div>
+   <div class="featurelist">
+    <div class="feature"><div class="ico">S</div><div><strong>For students</strong><span>Check sample seat and crowd status, view stops and submit a service report.</span></div></div>
+    <div class="feature"><div class="ico">D</div><div><strong>For shuttle operators</strong><span>Trip controls and passenger updates can be enabled when operator accounts are connected.</span></div></div>
+    <div class="feature"><div class="ico">A</div><div><strong>For transport office</strong><span>Manage verified vehicles, routes, operators and service reports.</span></div></div>
+   </div>
+  </article>
+  <article class="card" id="accounts"><div class="cardhead"><h2>Quick access</h2></div>
+   <div class="tabs"><button class="tab active" data-tab="student">Student</button><button class="tab" data-tab="operator">Operator</button><button class="tab" data-tab="admin">Transport office</button></div>
+   <div class="panel active" id="student"><p class="muted tiny">Demo student profile. This form stores information only in this browser session; it does not verify UCC student identity.</p><div class="field"><label>Student index number</label><input id="index" placeholder="Enter index number"></div><div class="field"><label>Full name (optional)</label><input id="studentname" placeholder="Enter full name"></div><button class="btn primary" onclick="saveStudent()">Save demo profile</button><div class="notice" id="studentmsg">No demo profile saved.</div></div>
+   <div class="panel" id="operator"><p class="muted tiny">Operator tools are a visual preview. Driver sign-in and shared GPS require a secure backend.</p><div class="field"><label>Operator ID</label><input placeholder="Operator ID"></div><button class="btn soft" onclick="toast('Operator access is a preview and is not connected yet.')">Preview operator access</button></div>
+   <div class="panel" id="admin"><p class="muted tiny">Transport office tools are a visual preview. Administrative access must be protected by verified accounts.</p><div class="field"><label>Office account</label><input placeholder="Office account"></div><button class="btn soft" onclick="toast('Administrator access is a preview and is not connected yet.')">Preview office access</button></div>
+  </article>
+  <article class="card"><div class="cardhead"><h2>How it works</h2></div><div class="featurelist">
+   <div class="feature"><div class="ico">1</div><div><strong>Choose a stop</strong><span>Find the terminal closest to your destination.</span></div></div>
+   <div class="feature"><div class="ico">2</div><div><strong>Check the shuttle</strong><span>Review the displayed sample occupancy and arrival estimate.</span></div></div>
+   <div class="feature"><div class="ico">3</div><div><strong>Plan your trip</strong><span>Use verified service information when it becomes available.</span></div></div>
+  </div></article>
+ </div>
+</section>
+</main>
+<footer class="footer"><div class="shell"><strong>UCC Transit-Sync</strong> · Campus shuttle information concept for the University of Cape Coast.<br>Prototype notice: sample stops, vehicle counts, crowd levels and arrival estimates are illustrative. This website is not connected to official UCC transport systems, live GPS, payments or verified user accounts.</div></footer>
+<div class="toast" id="toast"></div>
+<script>
+document.querySelectorAll('[data-tab]').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('[data-tab]').forEach(x=>x.classList.remove('active'));document.querySelectorAll('.panel').forEach(x=>x.classList.remove('active'));b.classList.add('active');document.getElementById(b.dataset.tab).classList.add('active')}));
+function toast(t){const el=document.getElementById('toast');el.textContent=t;el.style.display='block';setTimeout(()=>el.style.display='none',2600)}
+function saveStudent(){const v=document.getElementById('index').value.trim();if(!v){toast('Please enter an index number.');return}document.getElementById('studentmsg').textContent='Demo profile saved for this page: '+v+'. Identity has not been verified.';toast('Demo profile saved on this page.')}
+</script>
+</body></html>
